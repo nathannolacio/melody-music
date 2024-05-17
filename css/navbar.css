@@ -1,0 +1,43 @@
+.header {
+    height: vh;
+    display: flex;
+}
+
+.logo {
+    width: 220px;
+}
+
+.navbar {
+    width: 80%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navlist {
+    width: 40%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    list-style: none;
+}
+
+.navItem {
+    width: 100px;
+    margin: 0 2px;
+    text-align: center;
+    transition: color 0.3s ease,
+    font-weight 0.3s ease;
+}
+
+.navItem:hover {
+    color: #D1A63D;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.login {
+    background-color: #D1A63D;
+    border-radius: 25px;
+    width: 15%;
+}
