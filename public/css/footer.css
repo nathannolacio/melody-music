@@ -1,0 +1,50 @@
+.footer {
+    background-color: #fff;
+    width: 100%;
+    height: 25vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.informacoes-contato {
+    width: 80%;
+    height: 75%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.email-contato .titulo {
+    text-transform: uppercase;
+}
+
+.texto-footer {
+    color: #151618;
+}
+
+.logo, .email-contato, .redes-sociais {
+    width: 30%;
+}
+
+.redes-sociais {
+    width: 15%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.direitos-autorais {
+    background-color: #151618;
+    width: 100%;
+    height: 25%;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.fa-instagram, .fa-facebook, .fa-x-twitter {
+    color: #151618;
+}
