@@ -1,0 +1,56 @@
+* {
+    margin: 0;
+    padding: 0;
+    scrollbar-width: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+}
+
+.lado-esquerdo {
+    width: 50%;
+    height: 100vh;
+}
+
+.imagens {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.musica {
+    width: 100%;
+    position: relative;
+    top: -100px;
+}
+
+.pessoa {
+    width: 60%;
+    position: relative;
+    bottom: 323px;
+    margin-left: 75px;
+}
+
+.lado-direito {
+    background-color: black;
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #fff;
+}
+
+.titulo {
+    color: #D1A63D;
+}
+
+.input {
+    display: flex;
+    flex-direction: column;
+}

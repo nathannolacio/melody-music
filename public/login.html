@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/login.css">
+    <script src="./js/sessao.js"></script>
+</head>
+
+<body>
+    <div class="container">
+        <div class="lado-esquerdo">
+            <div class="imagens">
+                <img class="musica" src="./assets/img/cadastroUsuario-musica.svg" alt="">
+                <img class="pessoa" src="./assets/img/cadastroUsuario-pessoa.svg" alt="">
+            </div>
+        </div>
+        <div class="lado-direito">
+            <span id="mensagem_erro"></span>
+            <h1 class="titulo">Login</h1>
+            <div class="input">
+                <label>Email:</label>
+                <input type="text" id="ipt_email">
+            </div>
+            <div class="input">
+                <label>Senha</label>
+                <input type="text" id="ipt_senha">
+            </div>
+            <button onclick="fazerLogin()">Entrar</button>
+            <span>Não possui uma conta? <span>Cadastre-se</span></span>
+        </div>
+
+    </div>
+</body>
+
+</html>
+
+<script src='./js/login.js'></script>
