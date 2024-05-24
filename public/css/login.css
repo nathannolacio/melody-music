@@ -12,6 +12,20 @@
     height: 100vh;
 }
 
+.fa-arrow-left {
+    color: #faf8ec;
+    position: absolute;
+    top: 70px;
+    left: 850px;
+    transition: color 0.3s ease-in-out;   
+}
+
+.fa-arrow-left:hover {
+    cursor: pointer;
+    color: #D1A63D;
+}
+
+
 .lado-esquerdo {
     background-color: #faf8ec;
     width: 60%;

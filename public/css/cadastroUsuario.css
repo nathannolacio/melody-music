@@ -5,12 +5,27 @@
     font-family: "Josefin Sans", sans-serif;
 }
 
+
 .container {
     display: flex;
     flex-direction: row;
     width: 100%;
     height: 100vh;
 }
+
+.fa-arrow-left {
+    color: #faf8ec;
+    position: absolute;
+    top: 35px;
+    left: 850px;
+    transition: color 0.3s ease-in-out;   
+}
+
+.fa-arrow-left:hover {
+    cursor: pointer;
+    color: #D1A63D;
+}
+
 
 .lado-esquerdo {
     background-color: #faf8ec;

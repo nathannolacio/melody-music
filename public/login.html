@@ -8,6 +8,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/login.css">
     <script src="./js/sessao.js"></script>
+    <script src="https://kit.fontawesome.com/dbbdfc731d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
@@ -19,7 +20,7 @@
             </div>
         </div>
         <div class="lado-direito">
-            <span id="mensagem_erro"></span>
+            <i onclick="voltarPaginaAnterior()" class="fa-solid fa-arrow-left fa-2x"></i>
             <h1 class="titulo">Login</h1>
             <div class="input-container">
                 <label>Email:</label>
@@ -39,3 +40,8 @@
 </html>
 
 <script src='./js/login.js'></script>
+<script>
+    function voltarPaginaAnterior() {
+        window.location = 'index.html'
+    }
+</script>
