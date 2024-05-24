@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Cadastre-se</title>
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/cadastroUsuario.css">
 </head>
@@ -22,24 +22,24 @@
         </div>
         <div class="lado-direito">
             <h1 class="titulo">Cadastro</h1>
-            <div class="input">
-                <label>Nome:</label>
+            <div class="input-container">
+                <label>Nome</label>
                 <input type="text" id="ipt_nome">
             </div>
-            <div class="input">
-                <label>Email:</label>
+            <div class="input-container">
+                <label>Email</label>
                 <input type="text" id="ipt_email">
             </div>
-            <div class="input">
+            <div class="input-container">
                 <label>Senha</label>
                 <input type="text" id="ipt_senha">
             </div>
-            <div class="input">
-                <label>Confirmação de senha:</label>
+            <div class="input-container">
+                <label>Confirmação de senha</label>
                 <input type="text" id="ipt_confirmacaoSenha">
             </div>
-            <button onclick="cadastrarUsuario()">Cadastrar</button>
-            <span>Já possui uma conta? <span>Faça login</span></span>
+            <button class="botao" onclick="cadastrarUsuario()">Cadastrar</button>
+            <span>Já possui uma conta? <a href="login.html">Faça login</a></span>
         </div>
 
     </div>

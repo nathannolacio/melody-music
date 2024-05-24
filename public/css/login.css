@@ -2,6 +2,7 @@
     margin: 0;
     padding: 0;
     scrollbar-width: none;
+    font-family: "Josefin Sans", sans-serif;
 }
 
 .container {
@@ -12,7 +13,8 @@
 }
 
 .lado-esquerdo {
-    width: 50%;
+    background-color: #faf8ec;
+    width: 60%;
     height: 100vh;
 }
 
@@ -26,19 +28,19 @@
 .musica {
     width: 100%;
     position: relative;
-    top: -100px;
+    bottom: 140px;
 }
 
 .pessoa {
-    width: 60%;
+    width: 50%;
     position: relative;
-    bottom: 323px;
+    bottom: 442px;
     margin-left: 75px;
 }
 
 .lado-direito {
-    background-color: black;
-    width: 50%;
+    background-image: linear-gradient(to top left, #151618, #2c2d4d);
+    width: 40%;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -48,9 +50,68 @@
 
 .titulo {
     color: #D1A63D;
+    font-size: 38px;
+    font-weight: 600;
 }
 
-.input {
+.input-container {
     display: flex;
     flex-direction: column;
+    width: 65%;
+    height: 10%;
+    justify-content: space-between;
+}
+
+label {
+    font-size: 24px;
+    font-weight: 400;
+    color: #faf8ec;
+}
+
+input {
+    width: 100%;
+    border: none;
+    height: 60%;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: #faf8ec;
+}
+
+input:focus {
+    border: 3px solid #2c2d4d;
+    box-shadow:0 0 0 1px #fff;    
+    outline: none;
+}
+
+.botao {
+    background-color: #D1A63D;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    font-size: 24px;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+}
+
+.botao:hover {
+    background-color: #c29130;
+    /* color: #fff; */
+    cursor: pointer;
+}
+
+span {
+    font-size: 20px;
+}
+
+a {
+    color: #D1A63D;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #c29130;
 }
