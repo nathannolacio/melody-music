@@ -5,6 +5,9 @@
     font-family: "Josefin Sans", sans-serif;
 }
 
+#cadastro_pt2 {
+    display: none;
+}
 
 .container {
     display: flex;
@@ -84,7 +87,7 @@ label {
     color: #faf8ec;
 }
 
-input {
+input, select {
     width: 100%;
     border: none;
     height: 60%;
@@ -95,7 +98,7 @@ input {
     background-color: #faf8ec;
 }
 
-input:focus {
+input:focus, select:focus {
     border: 3px solid #2c2d4d;
     box-shadow:0 0 0 1px #fff;    
     outline: none;
