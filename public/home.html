@@ -1,11 +1,65 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home</title>
+    <link rel="stylesheet" href="./css/home.css">
+    <link rel="stylesheet" href="./css/navbar-logado.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/dbbdfc731d.js" crossorigin="anonymous"></script>
 </head>
+
 <body>
-    <h1>Seja bem vindo à página Home!</h1>
+    <header>
+        <div class="navbar">
+            <img class="logo" src="./assets/icon/mms-logo.svg" alt="Logo do Melody Music School">
+            <div class="icon-container">
+                <i class="fa-solid fa-user fa-xl"></i>
+            </div>
+        </div>
+    </header>
+    <div class="container">
+        <div class="topo">
+            <div class="conteudo">
+                <h1>Olá! <span>Usuário</span></h1>
+                <h2>Bem vindo de volta!</h2>
+            </div>
+        </div>
+        <div class="proxima-aula">
+            <div class="conteudo">
+                <div>
+                    <p>
+                        A sua próxima aula está marcada para o dia: <span>dd/mm/yyyy - (dia-semana)</span>
+                    </p>
+                </div>
+                <div>
+                    <button class="btn-informacoes">Ver mais informações</button>
+                </div>
+                <dialog>
+                    Aqui ficam as informações
+                </dialog>
+            </div>
+        </div>
+        <div class="aulas-futuras">
+            <div class="conteudo">
+                <div class="titulo-container">
+                    <h2>Suas próximas aulas:</h2>
+                </div>
+                <div class="card-aula-container">
+                    <div class="card-aula">Texto aqui</div>
+                    <div class="card-aula">Texto aqui</div>
+                    <div class="card-aula">Texto aqui</div>
+                </div>
+                <div class="nova-aula">
+                    <button class="btn-nova-aula">Agendar nova aula</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </body>
+
 </html>
