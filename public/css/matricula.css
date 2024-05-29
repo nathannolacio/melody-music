@@ -1,0 +1,194 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: "Josefin Sans", sans-serif;
+    scrollbar-width: none;
+}
+
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    height: 100vh;
+}
+
+.lado-esquerdo {
+    background-color: #faf8ec;
+    width: 60%;
+    height: 100vh;
+}
+
+.imagens {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+}
+
+.musica {
+    width: 100%;
+    position: relative;
+    bottom: 140px;
+}
+
+.pessoa {
+    width: 50%;
+    position: relative;
+    bottom: 442px;
+    margin-left: 75px;
+}
+
+.lado-direito {
+    background-image: linear-gradient(to top left, #151618, #371e11);
+    background-color: #151618;
+    width: 40%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+    color: #fff;
+}
+
+.titulo {
+    color: #ddbf67;
+    font-size: 38px;
+    font-weight: 600;
+}
+
+.input-container {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    height: 10%;
+    justify-content: space-between;
+}
+
+label {
+    font-size: 24px;
+    font-weight: 400;
+    color: #faf8ec;
+}
+
+input, select {
+    width: 100%;
+    border: none;
+    height: 50%;
+    padding: 0px 10px;
+    box-sizing: border-box;
+    font-size: 20px;
+    border-radius: 5px;
+    background-color: #faf8ec;
+}
+
+input:focus, select:focus {
+    border: 3px solid #d1a63d;
+    box-shadow:0 0 0 1px #151618;    
+    outline: none;
+}
+
+.botao {
+    background-color: #ddbf67;
+    padding: 10px 30px;
+    border-radius: 10px;
+    border: none;
+    font-size: 24px;
+    font-weight: 600;
+    transition: background-color 0.2s ease-in-out,
+    color 0.2s ease-in-out;
+}
+
+.botao:hover {
+    background-color: #d1a63d;
+    /* color: #fff; */
+    cursor: pointer;
+}
+
+span {
+    font-size: 20px;
+}
+
+a {
+    color: #D1A63D;
+    text-decoration: none;
+    transition: color 0.3s ease-in-out;
+}
+
+a:hover {
+    color: #c29130;
+}
+
+.modal-mensagem {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(21, 22, 24, 0.850);
+}
+
+.mensagem_erro-container, .mensagem_sucesso-container {
+    background-color: #fff;
+    color: #151618;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 45vh;
+    width: 45%;
+    border-radius: 15px;
+}
+
+.mensagem {
+    text-align: center;
+}
+
+.fa-triangle-exclamation {
+    color: #d40808;
+}
+
+.btn-modal {
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 16px;
+    transition: all .3s ease-in-out;
+}
+
+.btn-modal:hover {
+    color: #faf8ec;
+    cursor: pointer;
+}
+
+.mensagem_erro-container .btn-modal{
+    background-color: #d40808;
+}
+
+.mensagem_erro-container .btn-modal:hover {
+    background-color: #8c1010;
+}
+
+.mensagem_sucesso-container .btn-modal {
+    background-color: #1cae02;
+}
+
+.mensagem_sucesso-container .btn-modal:hover {
+    background-color: #18680c;
+}
+
+.fa-circle-check {
+    color: #1cae02;
+}
+
+.fa-xmark {
+    color: #151618;
+    position: absolute;
+    top: 185px;
+    left: 950px;
+}
+
+.fa-xmark:hover {
+    cursor: pointer;
+}

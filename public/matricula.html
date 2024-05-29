@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Matrícula</title>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./css/matricula.css">
+    <script src="https://kit.fontawesome.com/dbbdfc731d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="container">
+        <dialog class="modal-mensagem" id="modal_mensagem">
+            <i onclick="fecharModal()" class="fa-solid fa-xmark fa-2x"></i>
+            <div class="mensagem_erro-container" id="mensagem_erro_container">
+                <i class="fa-solid fa-triangle-exclamation fa-beat fa-5x"></i>
+                <div class="mensagem">
+                    <h1>Ops!</h1>
+                    <span id="mensagem_erro">Aqui dentro vem a mensagem de erro</span>
+                </div>
+                <button onclick="fecharModal()" class="btn-modal">Tentar novamente</button>
+            </div>
+            <div class="mensagem_sucesso-container" id="mensagem_sucesso_container">
+                <i class="fa-solid fa-circle-check fa-5x"></i>
+                <div class="mensagem">
+                    <h1>Sucesso!</h1>
+                    <span id="mensagem_sucesso">Aqui dentro vem a mensagem
+                    </span>
+                </div>
+                <button onclick="fecharModal()" class="btn-modal">Ir agora</button>
+            </div>
+        </dialog>
+        <div class="lado-esquerdo">
+            <div class="imagens">
+                <img class="musica" src="./assets/img/cadastroUsuario-musica.svg" alt="">
+                <img class="pessoa" src="./assets/img/cadastroUsuario-pessoa.svg" alt="">
+            </div>
+        </div>
+        <div class="lado-direito">
+            <!-- <i class="fa-solid fa-arrow-left fa-2x"></i> -->
+            <h1 class="titulo">Matrícula</h1>
+            <div class="input-container">
+                <label>Curso:</label>
+                <select id="ipt_curso">
+                    <option value="">Selecione um curso</option>
+                </select>
+            </div>
+            <div class="input-container">
+                <label>Nível:</label>
+                <select id="ipt_nivel">
+                    <option value="">Selecione um nível</option>
+                </select>
+            </div>
+            <button class="botao" onclick="matricular()">Finalizar matricula</button>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="./js/matricula.js"></script>
