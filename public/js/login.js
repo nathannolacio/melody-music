@@ -1,17 +1,11 @@
 function fazerLogin() {
-    // aguardar()
-
     const email = ipt_email.value
     const senha = ipt_senha.value
 
     if (email == '' || senha == '') {
         mensagem_erro.innerHTML = 'Mensagem de erro para campos em branco'
-        // finalizarAguardar()
         return false
     } 
-    // else {
-    //     setInterval(sumirMensagem, 5000)
-    // }
 
     console.log("FORM LOGIN: ", email);
     console.log("FORM SENHA: ", senha);
@@ -38,13 +32,14 @@ function fazerLogin() {
                 sessionStorage.EMAIL_USUARIO = json.email;
                 sessionStorage.NOME_USUARIO = json.nome;
                 sessionStorage.ID_USUARIO = json.id;
-                // sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                 setTimeout(function () {
                     window.location = "./home.html"
-                }, 1000) // apenas para exibir o loading
+                }, 1000)
 
             });
+            
+
 
         } else {
 
@@ -52,7 +47,6 @@ function fazerLogin() {
 
             resposta.text().then(texto => {
                 console.error(texto);
-                // finalizarAguardar(texto);
             });
         }
 
@@ -62,7 +56,3 @@ function fazerLogin() {
 
     return false;
 }
-
-// function sumirMensagem() {
-//     cardErro.style.display = "none"
-// }
