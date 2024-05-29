@@ -8,13 +8,34 @@
 
     <title>Cadastre-se</title>
 
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
     <link rel="stylesheet" href="./css/cadastroUsuario.css">
     <script src="https://kit.fontawesome.com/dbbdfc731d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="container">
+        <dialog class="modal-mensagem" id="modal_mensagem">
+            <i onclick="fecharModal()" class="fa-solid fa-xmark fa-2x"></i>
+            <div class="mensagem_erro-container" id="mensagem_erro_container">
+                <i class="fa-solid fa-triangle-exclamation fa-beat fa-5x"></i>
+                <div class="mensagem">
+                    <h1>Ops!</h1>
+                    <span id="mensagem_erro">Aqui dentro vem a mensagem de erro</span>
+                </div>
+                <button onclick="fecharModal()" class="btn-modal">Tentar novamente</button>
+            </div>
+            <div class="mensagem_sucesso-container" id="mensagem_sucesso_container">
+                <i class="fa-solid fa-circle-check fa-5x"></i>
+                <div class="mensagem">
+                    <h1>Sucesso!</h1>
+                    <span id="mensagem_sucesso">Aqui dentro vem a mensagem
+                    </span>
+                </div>
+                <button onclick="fecharModal()" class="btn-modal">Ir agora</button>
+            </div>
+        </dialog>
         <div class="lado-esquerdo">
             <div class="imagens">
                 <img class="musica" src="./assets/img/cadastroUsuario-musica.svg" alt="">
@@ -50,22 +71,15 @@
                 <label>Curso que deseja se matricular:</label>
                 <select id="ipt_curso">
                     <option value="">Selecione uma opção</option>
-                    <option value="">Canto</option>
-                    <option value="">Piano</option>
-                    <option value="">Saxofone</option>
-                    <option value="">Trompete</option>
                 </select>
             </div>
             <div class="input-container">
                 <label>Selecione o nível:</label>
                 <select id="ipt_nivel">
                     <option value="">Selecione uma opção</option>
-                    <option value="">Básico</option>
-                    <option value="">Intermediário</option>
-                    <option value="">Avançado</option>
                 </select>
             </div>
-            <button class="botao" onclick="cadastrarUsuario()">Cadastrar</button>
+            <button class="botao" onclick="realizarMatricula()">Cadastrar</button>
         </div>
 
     </div>
