@@ -14,6 +14,18 @@
 </head>
 
 <body>
+    <dialog class="modal-matricula" id="modal_matricula">
+        <div class="conteudo-modal">
+            <div class="texto">
+                <h1>Olá, <span id="nome_usuario">Usuário</span>.<br> Seja bem vindo à Melody Music School!</h1>
+                <h2>Para proseguir é necessário realizar a sua matrícula em algum de nossos cursos. Vamos lá?</h2>
+            </div>
+            <div class="botoes-modal">
+                <button class="btn-matricular"><a href="./matricula.html">Realizar matrícula</a></button>
+                <button class="btn-informacoes">Mais informações</button>
+            </div>
+        </div>
+    </dialog>
     <header>
         <div class="navbar">
             <img class="logo" src="./assets/icon/mms-logo.svg" alt="Logo do Melody Music School">
@@ -23,12 +35,6 @@
         </div>
     </header>
     <div class="container">
-        <div class="topo">
-            <div class="conteudo">
-                <h1>Olá! <span>Usuário</span></h1>
-                <h2>Bem vindo de volta!</h2>
-            </div>
-        </div>
         <div class="proxima-aula">
             <div class="conteudo">
                 <div>
@@ -55,11 +61,41 @@
                     <div class="card-aula">Texto aqui</div>
                 </div>
                 <div class="nova-aula">
-                    <button class="btn-nova-aula">Agendar nova aula</button>
+                    <button class="btn-nova-aula" onclick="abrirModalAgendarAula()">Agendar nova aula</button>
                 </div>
             </div>
         </div>
     </div>
+    <dialog class="modal-agendar-aula" id="modal_agendar_aula">
+        <i onclick="fecharModalAgendarAula()" class="fa-solid fa-xmark fa-2x"></i>
+        <div class="conteudo-modal">
+            <div class="titulo">
+                <h1>Nova aula</h1>
+            </div>
+            <div class="input-container">
+                <div class="data">
+                    <p>Dia:</p>
+                    <input class="ipt-modal-agendar" type="date" id="ipt_data">
+                </div>
+                <div class="horario">
+                    <p>Horário:</p>
+                    <input class="ipt-modal-agendar" type="time" id="ipt_time">
+                </div>
+                <div class="professor">
+                    <p>Professor(a):</p>
+                    <select class="ipt-modal-agendar" id="ipt_professor">
+                        <option value="">Selecione um(a) professor(a)</option>
+                    </select>
+                </div>
+            </div>
+            <div class="btn-agendar-container">
+                <button class="btn-agendar">Agendar</button>
+            </div>
+        </div>
+    </dialog>
 </body>
 
 </html>
+
+<script src="./js/home.js"></script>
+<script src="./js/sessao.js"></script>
