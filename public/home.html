@@ -73,23 +73,40 @@
                 <h1>Nova aula</h1>
             </div>
             <div class="input-container">
-                <div class="data">
+                <div class="data" id="div_data_aula">
                     <p>Dia:</p>
                     <input class="ipt-modal-agendar" type="date" id="ipt_data">
                 </div>
-                <div class="horario">
+                <div class="horario" id="div_horario_aula">
                     <p>Horário:</p>
-                    <input class="ipt-modal-agendar" type="time" id="ipt_time">
+                    <select class="ipt-modal-agendar" id="ipt_time">
+                        <option value="">Selecione um horário</option>
+                        <option value="">09:00 - 10:00</option>
+                        <option value="">10:00 - 11:00</option>
+                        <option value="">11:00 - 12:00</option>
+                        <option value="">13:00 - 14:00</option>
+                        <option value="">14:00 - 15:00</option>
+                        <option value="">15:00 - 16:00</option>
+                        <option value="">16:00 - 17:00</option>
+                        <option value="">17:00 - 18:00</option>
+                    </select>
                 </div>
-                <div class="professor">
+                <div class="professor" id="div_professor_aula">
                     <p>Professor(a):</p>
                     <select class="ipt-modal-agendar" id="ipt_professor">
                         <option value="">Selecione um(a) professor(a)</option>
                     </select>
                 </div>
             </div>
-            <div class="btn-agendar-container">
-                <button class="btn-agendar">Agendar</button>
+            <div class="btn-prox-etapa-container" id="btn_prox_etapa_container">
+                <button class="btn-prox-etapa" id="btn_prox_etapa" onclick="proximaEtapaAgendamento()">
+                    Próximo
+                </button>
+            </div>
+            <div class="btn-agendar-container" id="btn_agendar_container">
+                <button class="btn-agendar" id="btn_agendar" onclick="agendarAula()">
+                    Agendar
+                </button>
             </div>
         </div>
     </dialog>

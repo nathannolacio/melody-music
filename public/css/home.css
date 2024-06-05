@@ -4,6 +4,10 @@
     font-family: "Josefin Sans", sans-serif;    
 }
 
+header {
+    position: static !important;
+}
+
 .modal-matricula {
     background-color: rgba(21, 22, 24, 0.980);
     width: 100%;
@@ -102,17 +106,14 @@
 
 .container {
     height: 88vh;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    position: relative;
-    top: 77px;
-    padding: 30px;
-    box-sizing: border-box;
 }   
 
 .topo, .proxima-aula, .aulas-futuras {
-    width: 100%;
+    width: 100%;    
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -226,11 +227,15 @@ span {
     height: 45%;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-around;
     text-align: left;
 }
 
-.btn-agendar {
+.professor {
+    display: none;
+}
+
+.btn-agendar, .btn-prox-etapa {
     border: none;
     color: #371e11;
     padding: 10px 25px;
@@ -241,7 +246,11 @@ span {
     transition: all .3s ease-in-out;
 }
 
-.btn-agendar:hover {
+.btn-agendar {
+    display: none;
+}
+
+.btn-agendar:hover, .btn-prox-etapa:hover {
     background-color: rgb(209, 166, 61, 0.850);
     color: rgb(55, 30, 17, 0.850);
     cursor: pointer;
