@@ -33,6 +33,8 @@ function verificarUsuario() {
         console.log(erro)
     })
 
+    // listarProximasAulas(idUsuario)
+
     return false
 }
 
@@ -46,6 +48,14 @@ function fecharModalAgendarAula() {
     div_professor_aula.style.display = 'none'
     btn_agendar.style.display = 'none'
     btn_prox_etapa.style.display = 'block'
+
+    ipt_professor.innerHTML = `
+    <option value=''>Selecione um(a) professor(a)</option>
+    `
+
+    ipt_data.value = ''
+    ipt_horario.value = ''
+
     modal_agendar_aula.style.display = 'none'
 }
 
@@ -55,12 +65,8 @@ function proximaEtapaAgendamento() {
     div_professor_aula.style.display = 'block'
     btn_prox_etapa.style.display = 'none'
     btn_agendar.style.display = 'block'
-
+    
     listarProfessores()
-}
-
-function agendarAula() {
-    alert('aula agendada')
 }
 
 function listarProfessores() {
@@ -80,3 +86,69 @@ function listarProfessores() {
         console.log(`#ERRO: ${resposta}`)
     })
 }
+
+function formatarData(dataAula) {
+    const data = new Date(dataAula)
+    const dataFormatada = (data.getFullYear() + '-' + ((data.getMonth() + 1)) + '-' + (data.getDate() + 1))
+
+    return dataFormatada
+}
+
+function agendarAula() {
+    const dataAula = ipt_data.value
+    const horarioAula = ipt_horario.value
+    const idUsuario = sessionStorage.ID_USUARIO
+    const idProfessor = ipt_professor.value
+    const dataFormatada = formatarData(dataAula)
+
+    fetch("/aulas/cadastrar", {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+            idUsuario: idUsuario,
+            idProfessor: idProfessor,
+            data: dataFormatada,
+            horario: horarioAula
+        })
+    })
+    .then(function (resposta) {
+        console.log("resposta: ", resposta)
+
+        if(resposta.ok) {
+            fecharModalAgendarAula()
+        } else {
+            throw "Houve um erro ao tentar agendar a aula!"
+        }
+    })
+    .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`)
+    })
+
+    return false
+}
+
+// function listarProximasAulas(idUsuario) {
+//     fetch("/aulas/listarProximasAulas", {
+//         method: "POST",
+//         headers: {
+//             "Content-Type": "application/json"
+//         },
+//         body: JSON.stringify({
+//             idUsuario: idUsuario
+//         })
+//     })
+//     .then(function (resposta) {
+//         console.log("resposta: ", resposta)
+        
+//         if(!resposta.ok) {
+//             throw "Houve um erro ao tentar listar a próxima aula!"
+//         }
+//     })
+//     .catch(function (resposta) {
+//         console.log(`#ERRO: ${resposta}`)
+//     })
+
+//     return false
+// }

@@ -15,9 +15,13 @@ var HOST_APP = process.env.APP_HOST;
 
 var app = express();
 
-// var indexRouter = require("./src/routes/index");
+var indexRouter = require("./src/routes/index");
 var usuarioRouter = require("./src/routes/usuarios");
-
+var cursoRouter = require("./src/routes/cursos");
+var nivelRouter = require("./src/routes/niveis");
+var matriculaRouter = require("./src/routes/matriculas");
+var professorRouter = require("./src/routes/professores");
+var aulaRouter = require("./src/routes/aulas");
 // var avisosRouter = require("./src/routes/avisos");
 // var medidasRouter = require("./src/routes/medidas");
 // var aquariosRouter = require("./src/routes/aquarios");
@@ -29,8 +33,13 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.use(cors());
 
-// app.use("/", indexRouter);
+app.use("/", indexRouter);
 app.use("/usuarios", usuarioRouter);
+app.use("/cursos", cursoRouter);
+app.use("/niveis", nivelRouter);
+app.use("/matriculas", matriculaRouter);
+app.use("/professores", professorRouter);
+app.use("/aulas", aulaRouter)
 // app.use("/avisos", avisosRouter);
 // app.use("/medidas", medidasRouter);
 // app.use("/aquarios", aquariosRouter);
