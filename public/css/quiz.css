@@ -1,0 +1,104 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Josefin Sans', sans-serif;
+    color: #371e11;
+}
+
+body {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+h1 {
+    color: #865422;
+    margin-bottom: 25px;
+}
+
+.quiz-container {
+    background-color: #ddbf67;
+    padding: 10px;
+    border-radius: 10px;
+    width: 60%;
+    height: 70vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.conteudo {
+    display: flex;
+    flex-direction: column;
+    width: 65%;
+    gap: 25px;
+}
+
+.qtdQuestoes, .questao {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.qtdQuestoes {
+    text-align: end;
+}
+
+.spnRespostas {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 15px;
+}
+
+.resposta {
+    text-align: center;
+    
+    padding: 8px 0;
+}
+
+button {
+    width: 100%;
+    text-align: start;
+    padding: 5px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: #371e11;
+    color: #ddbf67;
+    font-size: 20px;
+    transition: all .3s ease-in-out;
+}
+
+button:hover {
+    background-color: rgba(55, 30, 17, 0.900);
+    color: rgba(221, 192, 103, 0.900);
+}
+
+.encerramento {
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 25px;
+    width: 65%;
+}
+
+.encerramento div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.encerramento button {
+    width: 45%;
+    text-align: center;
+    padding: 8px 3px;
+}
+
+.txt_encerramento {
+    font-size: 22px;
+    font-weight: 600;
+}
