@@ -22,6 +22,7 @@ var nivelRouter = require("./src/routes/niveis");
 var matriculaRouter = require("./src/routes/matriculas");
 var professorRouter = require("./src/routes/professores");
 var aulaRouter = require("./src/routes/aulas");
+var jogadaRouter = require("./src/routes/jogadas");
 // var avisosRouter = require("./src/routes/avisos");
 // var medidasRouter = require("./src/routes/medidas");
 // var aquariosRouter = require("./src/routes/aquarios");
@@ -39,7 +40,8 @@ app.use("/cursos", cursoRouter);
 app.use("/niveis", nivelRouter);
 app.use("/matriculas", matriculaRouter);
 app.use("/professores", professorRouter);
-app.use("/aulas", aulaRouter)
+app.use("/aulas", aulaRouter);
+app.use("/jogadas", jogadaRouter);
 // app.use("/avisos", avisosRouter);
 // app.use("/medidas", medidasRouter);
 // app.use("/aquarios", aquariosRouter);
