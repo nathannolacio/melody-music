@@ -40,31 +40,38 @@ function cadastrar(req, res) {
     }
 }
 
-// function listarProximasAulas(req, res) {
-//     var idUsuario = req.body.idUsuario
+function listar(req, res) {
+    var idUsuario = req.body.idUsuario
 
-//     if(idUsuario == undefined) {
-//         res.status(400).send("O id do usuário está undefined!");
-//     } else {
-//         aulaModel.listarProximasAulas(idUsuario)
-//         .then(function (resposta) {
-//             res.status(200).send("Aula listada com sucesso")
-//         }).catch(function (erro) {
-//             res.status(500).json(erro.sqlMessage)
-//         }).then(function (resultado) {
-//             res.json(resultado);
-//         }).catch(function (erro) {
-//             console.log(erro);
-//             console.log(
-//                 "\nHouve um erro ao listar! Erro: ",
-//                 erro.sqlMessage
-//             );
-//             res.status(500).json(erro.sqlMessage);
-//         })
-//     }
-// }
+    if(idUsuario == undefined) {
+        res.status(400).send("O id do usuário está undefined!");
+    } else {
+        aulaModel.listar(idUsuario)
+        .then(function (resultado) {
+            console.log(`\nResultados encontrados: ${resultado.length}`);
+            console.log(`Resultados: ${JSON.stringify(resultado)}`)
+
+            if(resultado.length != 0) {
+                console.log(resultado)
+                
+                res.json({
+                    dataHora: resultado[0].dataHora,
+                    nomeProfessor: resultado[0].nome,
+                    emailProfessor: resultado[0].email
+                })
+            } else {
+                res.status(403).send("Falha ao listar as aulas!");
+            }
+        })
+        .catch(function (erro) {
+            console.log(erro);
+            console.log("\nHouve um erro ao realizar o login! Erro: ", erro.sqlMessage);
+            res.status(500).json(erro.sqlMessage);
+        })
+    }
+}
 
 module.exports = {
     cadastrar,
-    // listarProximasAulas
+    listar
 }

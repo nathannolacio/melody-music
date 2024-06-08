@@ -8,8 +8,8 @@ router.post("/cadastrar", function (req, res) {
     aulaController.cadastrar(req, res);
 })
 
-// router.post("/listarProximasAulas", function (req, res) {
-//     aulaController.listarProximasAulas(req, res);
-// })
+router.post("/listar", function (req, res) {
+    aulaController.listar(req, res);
+})
 
 module.exports = router;
