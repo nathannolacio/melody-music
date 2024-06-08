@@ -25,14 +25,21 @@ function matricular() {
             console.log("resposta: ", resposta);
             
             if(resposta.ok) {
-            mensagem_sucesso.innerHTML =
-            "Cadastro realizado com sucesso! Redirecionando para tela de Login..."
-            modal_mensagem.style.display = 'flex'
-            mensagem_erro_container.style.display = 'none'
 
             resposta.json().then(json => {
                 console.log(json)
                 console.log(JSON.stringify(json))
+
+                sessionStorage.ID_CURSO = idCurso
+
+                modal_mensagem.style.display = 'flex'
+                mensagem_erro_container.style.display = 'none'
+                mensagem_sucesso.innerHTML =
+                "Cadastro realizado com sucesso!<br> Redirecionando para a nossa home..."
+
+                setTimeout(() => {
+                    window.location = './home.html'
+                }, '2000')
             })
             }
         })
