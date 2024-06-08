@@ -5,12 +5,18 @@ const textoEncerramento = document.querySelector(".txt_encerramento");
 const conteudo = document.querySelector(".conteudo");
 const conteudoEncerramento = document.querySelector(".encerramento");
 const btnReiniciar = document.querySelector(".btn_reiniciar");
+const btnAnalisar = document.querySelector(".btn_analisar");
 
-import { quizTeoriaMusical, quizViolao } from "./quizQuestoes/questoes.js"
+import { quizes } from "./quizQuestoes/questoes.js"
+
+console.log(quizes)
+
+let idUsuario = sessionStorage.ID_USUARIO
+let idQuiz = sessionStorage.ID_QUIZ
 
 let questaoAtual = 0
 let qtdAcertos = 0
-let quizSelecionado = quizViolao
+const quizSelecionado = quizes[idQuiz-1]
 
 btnReiniciar.onclick = () => {
     conteudo.style.display = "flex";
@@ -20,13 +26,17 @@ btnReiniciar.onclick = () => {
     qtdAcertos = 0;
     exibirQuestao();
   };
-  
+
+  btnAnalisar.onclick = () => {
+    window.location = '../dashboard/index.html'
+  }
+
   function proximaQuestao(e) {
     if (e.target.getAttribute("res-correta") === "true") {
       qtdAcertos++;
     }
   
-    if (questaoAtual < quizSelecionado.length - 1) {
+    if (questaoAtual < quizSelecionado.conteudo.length - 1) {
       questaoAtual++;
       exibirQuestao();
     } else {
@@ -35,14 +45,16 @@ btnReiniciar.onclick = () => {
   }
   
   function encerrar() {
-    textoEncerramento.innerHTML = `Você acertou ${qtdAcertos} de ${quizSelecionado.length}`;
+    textoEncerramento.innerHTML = `Você acertou ${qtdAcertos} de ${quizSelecionado.conteudo.length}`;
     conteudo.style.display = "none";
     conteudoEncerramento.style.display = "flex";
+
+    cadastrarJogada()
   }
   
   function exibirQuestao() {
-    qtdQuestoes.innerHTML = `${questaoAtual + 1}/${quizSelecionado.length}`;
-    const item = quizSelecionado[questaoAtual];
+    qtdQuestoes.innerHTML = `${questaoAtual + 1}/${quizSelecionado.conteudo.length}`;
+    const item = quizSelecionado.conteudo[questaoAtual];
     respostas.innerHTML = "";
     questao.innerHTML = item.questao;
   
@@ -62,5 +74,35 @@ btnReiniciar.onclick = () => {
       item.addEventListener("click", proximaQuestao);
     });
   }
-  
-  exibirQuestao();  
+
+  function cadastrarJogada() {
+    fetch("/jogadas/cadastrar", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        idUsuario: idUsuario,
+        idQuiz: idQuiz,
+        qtdAcertos: qtdAcertos
+      })
+    }).then(function (resposta) {
+      console.log("resposta: ", resposta);
+
+      if(resposta.ok) {
+        console.log('Cadastro de jogada realizado com sucesso!')
+      } else {
+        throw "Houve um erro ao tentar realizar o cadastro da jogada!";
+      }
+    }).catch(function (resposta) {
+      console.log(`#ERRO: ${resposta}`);
+    })
+
+    return false
+  }
+
+  function navegarParaDashboard() {
+    window.location = './dashboard/index.html'
+  }
+
+  exibirQuestao()
