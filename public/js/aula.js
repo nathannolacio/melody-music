@@ -120,6 +120,7 @@ function agendarAula() {
 
         if(resposta.ok) {
             fecharModalAgendarAula()
+            verificarUsuario()
         } else {
             throw "Houve um erro ao tentar agendar a aula!"
         }
@@ -127,7 +128,6 @@ function agendarAula() {
     .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`)
     })
-    verificarUsuario()
 
     return false
 }

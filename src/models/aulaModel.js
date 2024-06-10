@@ -14,7 +14,8 @@ function listar(idUsuario) {
     select aula.dataHora, usuario.id, usuario.nome, professor.nome, professor.email from aula
     join usuario on fkAluno = id
     join professor on fkProfessor = idProfessor
-    where dataHora > current_timestamp() and id = ${idUsuario};
+    where dataHora > current_timestamp() and id = ${idUsuario}
+    order by dataHora asc;
     `
     
     console.log("Executando a instrução SQL: \n" + instrucaoSql);
