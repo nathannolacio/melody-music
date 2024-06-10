@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/navbar-logado.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+    <script src="https://kit.fontawesome.com/dbbdfc731d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <img class="logo" src="../assets/icon/logo-branco.svg" alt="Logo do Melody Music School">
+            <div class="nav-items">
+                <a href="../home.html">Home</a>
+                <a href="../jogos.html">Quiz</a>
+                <a href="../dashboard/index.html" class="nav-dashboard">Dashboard</a>
+                <a href="../aula.html">Agendar aula</a>
+            </div>
+            <button onclick="limparSessao()" class="btn-logout">Fazer logout</button>
+        </div>
+    </header>
+    <div class="conteudo-container">
+        <div class="metricas-container">
+            <div class="metrica ranking">
+                <div class="titulos-colunas">
+                    <span>Posição</span>
+                    <span>Nome</span>
+                    <span>Quantidade de jogadas</span>
+                    <span>Pontuação Geral Total</span>
+                </div>
+                <div class="ranking-conteudo">
+                    <!-- <div class="linha">
+                        <div class="coluna nome">1</div>
+                        <div class="coluna nome">Jubisclei Antunes</div>
+                        <div class="coluna qtdJogadas">10</div>
+                        <div class="coluna pontuacaoGeral">100</div>
+                    </div> -->
+                <!-- <span class="ranking-vazio">Não há jogadas registradas ainda!</span> -->
+                </div>
+            </div>
+            <div class="metrica grafico">
+                <div>
+                    <h1>Acertos e Erros nos Quizes</h1>
+                </div>
+                <div class="grafico-conteudo">
+                    <canvas id="pizza"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+<script src="../js/dashboard.js"></script>
+<script src="../js/sessao.js"></script>

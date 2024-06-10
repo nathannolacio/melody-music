@@ -4,7 +4,8 @@ function exibirRanking() {
     var instrucaoSql = `
     select usuario.nome, count(jogada.idJogada) as qtdGeralJogadas, sum(jogada.pontuacao) as totalPontuacaoGeral from usuario
     join jogada on fkUsuario = id
-    group by usuario.nome;
+    group by usuario.nome
+    order by totalPontuacaoGeral desc;
     `
     console.log("Executando a instrução SQL: \n" + instrucaoSql)
     return database.executar(instrucaoSql)

@@ -11,15 +11,26 @@ function exibirRanking() {
         method: 'GET'
     }).then(function (resposta) {
         resposta.json().then((pessoas) => {
-            pessoas.forEach((pessoa) => {
+            // pessoas.forEach((pessoa) => {
+            //     rankingConteudo.innerHTML += `
+            //         <div class="linha">
+            //             <div class="coluna nome">1</div>
+            //             <div class="coluna nome">${pessoa.nome}</div>
+            //             <div class="coluna qtdJogadas">${pessoa.qtdGeralJogadas}</div>
+            //             <div class="coluna pontuacaoGeral">${pessoa.totalPontuacaoGeral}</div>
+            //         </div>
+            //     `
+            // })
+            for(let posicao = 0; posicao < pessoas.length; posicao++) {
                 rankingConteudo.innerHTML += `
-                    <div class="linha">
-                        <div class="coluna nome">${pessoa.nome}</div>
-                        <div class="coluna qtdJogadas">${pessoa.qtdGeralJogadas}</div>
-                        <div class="coluna pontuacaoGeral">${pessoa.totalPontuacaoGeral}</div>
-                    </div>
-                `
-            })
+                     <div class="linha">
+                         <div class="coluna nome">${posicao+1}</div>
+                         <div class="coluna nome">${pessoas[posicao].nome}</div>
+                        <div class="coluna qtdJogadas">${pessoas[posicao].qtdGeralJogadas}</div>
+                         <div class="coluna pontuacaoGeral">${pessoas[posicao].totalPontuacaoGeral}</div>
+                     </div>
+                 `
+            }
         })
     }).catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`)
@@ -38,7 +49,7 @@ function buscarAcertosErros() {
                 data: {
                 labels: ['Acertos', 'Erros'],
                 datasets: [{
-                  label: '# of Votes',
+                  label: 'Quantidade',
                   data: [
                       dados.map(linha => linha.acertos),
                       dados.map(linha => linha.erros)
