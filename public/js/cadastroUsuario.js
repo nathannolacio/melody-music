@@ -26,8 +26,10 @@ function cadastrarUsuario() {
     } else if(senha.length < 6) {
         abrirModalErro()
         mensagem_erro.innerHTML = 'A senha precisa ter pelo menos 6 caracteres!'
-    }
-    else {
+    } else if(senha.length > 16) {
+        abrirModalErro()
+        mensagem_erro.innerHTML = 'A senha deve conter no máximo 16 caracteres!'
+    } else {
 
         fetch("/usuarios/cadastrar", {
             method: "POST",
