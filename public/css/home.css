@@ -109,10 +109,11 @@ header {
     width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    justify-content: center;
+    align-items: center;
 }   
 
-.topo, .proxima-aula, .aulas-futuras {
+.topo {
     width: 100%;    
     display: flex;
     flex-direction: column;
@@ -124,12 +125,14 @@ header {
     width: 80%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
+    height: 40vh;
 }
 
 .conteudo p {
     font-size: 20px;
+    /* text-align: center; */
 }
 
 span {
@@ -153,17 +156,7 @@ span {
     cursor: pointer;
 }
 
-.proxima-aula .conteudo {
-    height: 70px;
-    flex-direction: row;
-    justify-content: space-between;
-    background-color: #ddbf67;
-    padding: 0 18px;
-    box-sizing: border-box;
-    border-radius: 8px;
-}
-
-.aulas-futuras .conteudo {
+.conteudo {
     height: 300px;
     justify-content: space-between;
     align-items: center;
@@ -173,7 +166,7 @@ span {
     width: 100%;
 }
 
-.card-aula-container {
+.card-conteudo-container {
     width: 100%;
     height: 200px;
     display: flex;
@@ -181,11 +174,21 @@ span {
     align-items: center;
 }
 
-.card-aula {
+.card-conteudo {
     background-color: #151618;
     color: #fff;
     width: 25%;
     height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    border-radius: 5px;
+}
+
+.card-conteudo:hover {
+    cursor: pointer;
+    box-shadow: 0px 0px 30px #371e11;
 }
 
 .nova-aula {
@@ -194,7 +197,7 @@ span {
     justify-content: center;
 }
 
-.modal-agendar-aula {
+.modal-tema {
     background-color: rgb(21, 22, 24, 0.950);
     width: 100vw;
     height: 100vh;
@@ -207,66 +210,58 @@ span {
     align-items: center;
 }
 
-.modal-agendar-aula .conteudo-modal {
-    width: 35%;
-    height: 70%;
-    justify-content: space-evenly;
+.modal-tema .conteudo-modal {
+    width: 80%;
+    height: 90%;
     color: #371e11;
     font-size: 24px;
     font-weight: 600;
+    overflow-y: scroll;
+    justify-content: start;
+    padding-top: 60px;
+}
+
+.conteudo-modal::-webkit-scrollbar {
+    width: 12px;
+}
+
+.conteudo-modal::-webkit-scrollbar-track {
+    background: #371e11;
+}
+
+.conteudo-modal::-webkit-scrollbar-thumb {
+    background-color: #865422;
+    border-radius: 20px;
+    height: 20px;
 }
 
 .conteudo-modal .titulo h1{
     width: 100%;
     font-size: 42px;
     letter-spacing: 1px;
-    margin: 0;
+    margin-bottom: 30px;
 }
 
-.input-container {
+.conteudo-modal .conteudo-container h2 {
+    margin-top: 45px;
+    margin-bottom: 20px;
+    font-size: 30px;
+}
+
+.conteudo-container {
     height: 45%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     text-align: left;
-}
-
-.professor {
-    display: none;
-}
-
-.btn-agendar, .btn-prox-etapa {
-    border: none;
-    color: #371e11;
-    padding: 10px 25px;
-    font-size: 20px;
-    font-weight: 700;
-    border-radius: 20px;
-    background-color: #D1A63D;
-    transition: all .3s ease-in-out;
-}
-
-.btn-agendar {
-    display: none;
-}
-
-.btn-agendar:hover, .btn-prox-etapa:hover {
-    background-color: rgb(209, 166, 61, 0.850);
-    color: rgb(55, 30, 17, 0.850);
-    cursor: pointer;
-}
-
-.ipt-modal-agendar {
-    height: 28px;
-    padding: 0 3px;
-    font-size: 18px;
+    margin: 0;
 }
 
 .fa-xmark {
     color: #371e11;
     position: absolute;
-    top: 105px;
-    left: 883px;
+    top: 80px;
+    right: 170px;
     transition: all .3s ease-in-out;
 }
 

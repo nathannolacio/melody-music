@@ -17,7 +17,8 @@
     <dialog class="modal-matricula" id="modal_matricula">
         <div class="conteudo-modal">
             <div class="texto">
-                <h1>Olá, <span id="nome_usuario">Usuário</span>.<br> Seja bem vindo à Melody Music School!</h1>
+                <h1>Olá, <span id="nome_usuario">Usuário</span>.<br> Vimos que você têm interesse em agenar uma aula!
+                </h1>
                 <h2>Para proseguir é necessário realizar a sua matrícula em algum de nossos cursos. Vamos lá?</h2>
             </div>
             <div class="botoes-modal">
@@ -28,92 +29,42 @@
     </dialog>
     <header>
         <div class="navbar">
-            <img class="logo" src="./assets/icon/mms-logo.svg" alt="Logo do Melody Music School">
+            <img class="logo" src="./assets/icon/logo-branco.svg" alt="Logo do Melody Music School">
+            <div>
+                <a href="./dashboard/index.html">Dashboard</a>
+                <a href="./jogos.html">Quiz</a>
+                <a href="./aula.html">Agendar aula</a>
+            </div>
             <div class="icon-container">
                 <i class="fa-solid fa-user fa-xl"></i>
             </div>
         </div>
     </header>
     <div class="container">
-        <div class="proxima-aula">
-            <div class="conteudo">
-                <div>
-                    <p>
-                        A sua próxima aula está marcada para o dia: <span>dd/mm/yyyy - (dia-semana)</span>
-                    </p>
-                </div>
-                <div>
-                    <button class="btn-informacoes">Ver mais informações</button>
-                </div>
-                <dialog>
-                    Aqui ficam as informações
-                </dialog>
+        <div class="conteudo">
+            <div class="titulo-container">
+                <h2>Conteúdos:</h2>
             </div>
-        </div>
-        <div class="aulas-futuras">
-            <div class="conteudo">
-                <div class="titulo-container">
-                    <h2>Suas próximas aulas:</h2>
-                </div>
-                <div class="card-aula-container">
-                    <div class="card-aula">Texto aqui</div>
-                    <div class="card-aula">Texto aqui</div>
-                    <div class="card-aula">Texto aqui</div>
-                </div>
-                <div class="nova-aula">
-                    <button class="btn-nova-aula" onclick="abrirModalAgendarAula()">Agendar nova aula</button>
-                </div>
+            <div class="card-conteudo-container">
+                <div class="card-conteudo" idConteudo="1">Teoria Musical</div>
+                <div class="card-conteudo" idConteudo="2">Violão</div>
+                <div class="card-conteudo" idConteudo="3">Clarinete</div>
             </div>
         </div>
     </div>
-    <dialog class="modal-agendar-aula" id="modal_agendar_aula">
-        <i onclick="fecharModalAgendarAula()" class="fa-solid fa-xmark fa-2x"></i>
+    <dialog class="modal-tema" id="modal_tema">
+        <i class="fa-solid fa-xmark fa-2x"></i>
         <div class="conteudo-modal">
             <div class="titulo">
-                <h1>Nova aula</h1>
+                <h1 class="titulo-conteudo">Título - Tema</h1>
             </div>
-            <div class="input-container">
-                <div class="data" id="div_data_aula">
-                    <p>Dia:</p>
-                    <input class="ipt-modal-agendar" type="date" id="ipt_data">
-                </div>
-                <div class="horario" id="div_horario_aula">
-                    <p>Horário:</p>
-                    <select class="ipt-modal-agendar" id="ipt_horario">
-                        <option value="">Selecione um horário</option>
-                        <option value="09:00:00">09:00</option>
-                        <option value="10:00:00">10:00</option>
-                        <option value="11:00:00">11:00</option>
-                        <option value="13:00:00">13:00</option>
-                        <option value="14:00:00">14:00</option>
-                        <option value="15:00:00">15:00</option>
-                        <option value="16:00:00">16:00</option>
-                        <option value="17:00:00">17:00</option>
-                    </select>
-                </div>
-                <div class="professor" id="div_professor_aula">
-                    <p>Professor(a):</p>
-                    <select class="ipt-modal-agendar" id="ipt_professor">
-                        <option value="">Selecione um(a) professor(a)</option>
-                    </select>
-                </div>
-            </div>
-            <div class="btn-prox-etapa-container" id="btn_prox_etapa_container">
-                <button class="btn-prox-etapa" id="btn_prox_etapa" onclick="proximaEtapaAgendamento()">
-                    Próximo
-                </button>
-            </div>
-            <div class="btn-agendar-container" id="btn_agendar_container">
-                <button class="btn-agendar" id="btn_agendar" onclick="agendarAula()">
-                    Agendar
-                </button>
-            </div>
+            <div class="conteudo-container"></div>
         </div>
     </dialog>
-    
+
 </body>
 
 </html>
 
-<script src="./js/home.js"></script>
+<script src="./js/home.js" type="module"></script>
 <script src="./js/sessao.js"></script>

@@ -6,6 +6,7 @@ body {
     margin: 0;
     padding: 0;
     color: #151618;
+    font-family: 'Josefin Sans', sans-serif;
 }
 
 .background-inicio {
@@ -33,7 +34,8 @@ body {
     flex-direction: column;
     justify-content: space-between;
     margin-top: 60px;
-    height: 35vh;
+    height: 45vh;
+    /* background-color: yellowgreen; */
 }
 
 .titulo-sessao {
@@ -81,27 +83,6 @@ body {
     width: 50%;
     display: flex;
     justify-content: space-between;
-}
-
-.card-indicador {
-    width: auto;
-    background-color: #D1A63D;
-    padding: 10px 15px;
-    border-radius: 25px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 25px;
-}
-
-.card-indicador .texto {
-    font-size: 36px;
-    font-weight: bold;
-}
-
-.card-indicador .legenda {
-    text-transform: uppercase;
 }
 
 .subtitulo {
