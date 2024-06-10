@@ -17,35 +17,42 @@
     <dialog class="modal-matricula" id="modal_matricula">
         <div class="conteudo-modal">
             <div class="texto">
-                <h1>Olá, <span id="nome_usuario">Usuário</span>.<br> Seja bem vindo à Melody Music School!</h1>
+                <h1>Olá, <span id="nome_usuario">Usuário</span>.<br> Vimos que você tem interesse em agendar uma aula.</h1>
                 <h2>Para proseguir é necessário realizar a sua matrícula em algum de nossos cursos. Vamos lá?</h2>
             </div>
             <div class="botoes-modal">
                 <button class="btn-matricular"><a href="./matricula.html">Realizar matrícula</a></button>
-                <button class="btn-informacoes">Mais informações</button>
+                <button class="btn-informacoes"><a href="./home.html">Fazer depois</a></button>
             </div>
         </div>
     </dialog>
     <header>
         <div class="navbar">
-            <img class="logo" src="./assets/icon/mms-logo.svg" alt="Logo do Melody Music School">
-            <div class="icon-container">
-                <i class="fa-solid fa-user fa-xl"></i>
+            <img class="logo" src="./assets/icon/logo-branco.svg" alt="Logo do Melody Music School">
+            <div class="nav-items">
+                <a href="./home.html">Home</a>
+                <a href="./dashboard/index.html">Dashboard</a>
+                <a href="./jogos.html">Quiz</a>
+                <a href="./aula.html" class="nav-agendar">Agendar aula</a>
             </div>
+            <button onclick="limparSessao()" class="btn-logout">Fazer logout</button>
         </div>
     </header>
     <div class="container">
         <div class="proxima-aula">
             <div class="conteudo" id="conteudo_proxima_aula">
-                <div>
+                <div class="texto-aula" id="texto_aula">
                     <p id="paragrafo_aula_marcada">
                         A sua próxima aula está marcada para o dia: <span id="data_aula_marcada">dd/mm/yyyy - (dia-semana)</span>
                     </p>
+                    <p>Horário: <span id="spn_horario_aula"></span></p>
+                    <p>Professor(a): <span id="spn_professor_aula"></span></p>
+                    <p>Email do professor(a): <span id="spn_email_professor"></span></p>
                 </div>
-                <div id="boteos_aula_container">
-                    <button class="btn-informacoes" id="btn_informacoes_aula">
+                <div id="botoes_aula_container" class="botoes-aula-container">
+                    <!-- <button class="btn-informacoes" id="btn_informacoes_aula">
                         Ver mais informações
-                    </button>
+                    </button> -->
                     <button onclick="abrirModalAgendarAula()" class="btn-agendar-aula" id="btn_agendar_aula">
                         Agendar aula
                     </button>

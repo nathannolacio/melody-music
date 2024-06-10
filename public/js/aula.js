@@ -25,6 +25,8 @@ function verificarUsuario() {
                 if(json.length == 0) {
                     validarSessao()
                     modal_matricula.style.display = 'flex'
+                } else {
+                    sessionStorage.ID_CURSO = json[0].fkCurso
                 }
             })
         }
@@ -70,7 +72,7 @@ function proximaEtapaAgendamento() {
 }
 
 function listarProfessores() {
-    fetch("/professores/listar", {
+    fetch(`/professores/listar/${sessionStorage.ID_CURSO}`, {
         method: 'GET'
     })
     .then(function (resposta) {
@@ -125,6 +127,7 @@ function agendarAula() {
     .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`)
     })
+    verificarUsuario()
 
     return false
 }
@@ -145,11 +148,13 @@ function listar(idUsuario) {
             console.log("resposta: ", resposta)
 
             resposta.json().then(json => {
-                console.log(json)
                 console.log(JSON.stringify(json))
 
                 var data = new Date(json.dataHora).toLocaleDateString('pt-br')
                 data_aula_marcada.innerHTML = data
+                spn_horario_aula.innerHTML = new Date(json.dataHora).getHours() + 'h'
+                spn_professor_aula.innerHTML = json.nomeProfessor
+                spn_email_professor.innerHTML = json.emailProfessor
             })
             
         } else {
@@ -159,9 +164,9 @@ function listar(idUsuario) {
                 console.error(texto);
             });
 
-           paragrafo_aula_marcada.innerHTML = 'Você não tem nenhuma aula marcada!'
-           btn_informacoes_aula.style.display = 'none'
-           btn_agendar_aula.style.display = 'block'
+            texto_aula.innerHTML = `
+                <p>Você não tem nenhuma aula marcada!</p>
+            `
         }
     })
     .catch(function (resposta) {

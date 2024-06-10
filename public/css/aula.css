@@ -95,14 +95,10 @@ header {
     cursor: pointer;
 }
 
-.btn-matricular a {
+.btn-matricular a, .btn-informacoes a {
     text-decoration: none;
     color: inherit;
 }
-
-/* .botoes button:hover {
-
-} */
 
 .container {
     height: 88vh;
@@ -127,6 +123,8 @@ header {
     justify-content: center;
     align-items: center;
 }
+
+
 
 .conteudo p {
     font-size: 20px;
@@ -155,19 +153,19 @@ span {
 }
 
 .proxima-aula .conteudo {
-    height: 70px;
-    flex-direction: row;
+    /* height: 45vh; */
+    flex-direction: column;
     justify-content: space-between;
+    align-items: center;
     background-color: #ddbf67;
-    padding: 0 18px;
+    padding: 20px 18px;
     box-sizing: border-box;
     border-radius: 8px;
 }
 
-.aulas-futuras .conteudo {
-    height: 300px;
-    justify-content: space-between;
-    align-items: center;
+.texto-aula p{
+    font-size: 24px;
+    margin-bottom: 10px;
 }
 
 .conteudo .titulo-container {
@@ -274,4 +272,12 @@ span {
 .fa-xmark:hover {
     color: #D1A63D;
     cursor: pointer;
+}
+
+.nav-items .nav-agendar {
+    color: #D1A63D;
+}
+
+.botoes-aula-container {
+    margin-top: 25px;
 }
