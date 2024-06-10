@@ -144,3 +144,25 @@ insert into quiz(nome) values
 ('Teoria Musical'),
 ('Violão'),
 ('Clarinete');
+
+select usuario.nome, count(jogada.idJogada) as qtdGeralJogadas, sum(jogada.pontuacao) as qtdGeralPontuacao from usuario
+join jogada on fkUsuario = id
+group by usuario.nome;
+
+desc jogada;
+
+alter table jogada
+add column acertos int;
+
+alter table jogada
+add column erros int;
+
+select nome, sum(acertos) as acertos, sum(erros) as erros from usuario
+join jogada on id = fkUsuario
+where id = 2;
+
+select sum(acertos) as acertos, quiz.nome from usuario
+join jogada on id = fkUsuario
+join quiz on fkQuiz = idQuiz
+where usuario.id = 2
+group by quiz.nome;
