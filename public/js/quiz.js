@@ -6,6 +6,7 @@ const conteudo = document.querySelector(".conteudo");
 const conteudoEncerramento = document.querySelector(".encerramento");
 const btnReiniciar = document.querySelector(".btn_reiniciar");
 const btnAnalisar = document.querySelector(".btn_analisar");
+const btnFecharQuiz = document.querySelector('.fa-xmark')
 
 import { quizes } from "./quizQuestoes/questoes.js"
 
@@ -16,6 +17,8 @@ let idQuiz = sessionStorage.ID_QUIZ
 
 let questaoAtual = 0
 let qtdAcertos = 0
+let qtdErros = 0
+let pontuacao = 0
 const quizSelecionado = quizes[idQuiz-1]
 
 btnReiniciar.onclick = () => {
@@ -24,6 +27,8 @@ btnReiniciar.onclick = () => {
   
     questaoAtual = 0;
     qtdAcertos = 0;
+    qtdErros = 0;
+    pontuacao = 0;
     exibirQuestao();
   };
 
@@ -34,6 +39,9 @@ btnReiniciar.onclick = () => {
   function proximaQuestao(e) {
     if (e.target.getAttribute("res-correta") === "true") {
       qtdAcertos++;
+      pontuacao += 10;
+    } else {
+      qtdErros++
     }
   
     if (questaoAtual < quizSelecionado.conteudo.length - 1) {
@@ -84,7 +92,9 @@ btnReiniciar.onclick = () => {
       body: JSON.stringify({
         idUsuario: idUsuario,
         idQuiz: idQuiz,
-        qtdAcertos: qtdAcertos
+        pontuacao: pontuacao,
+        qtdAcertos: qtdAcertos,
+        qtdErros: qtdErros
       })
     }).then(function (resposta) {
       console.log("resposta: ", resposta);
@@ -103,6 +113,10 @@ btnReiniciar.onclick = () => {
 
   function navegarParaDashboard() {
     window.location = './dashboard/index.html'
+  }
+
+  btnFecharQuiz.onclick = function fecharQuiz() {
+    window.location = '../jogos.html'
   }
 
   exibirQuestao()

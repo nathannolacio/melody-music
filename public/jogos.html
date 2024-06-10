@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jogos</title>
+    <link rel="stylesheet" href="./css/jogos.css">
+    <link rel="stylesheet" href="./css/navbar-logado.css">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
+        rel="stylesheet">
+
+    <script src="https://kit.fontawesome.com/dbbdfc731d.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <header>
+        <div class="navbar">
+            <img class="logo" src="./assets/icon/logo-branco.svg" alt="Logo do Melody Music School">
+            <div class="nav-items">
+                <a href="./home.html">Home</a>
+                <a href="../jogos.html" class="nav-quiz">Quiz</a>
+                <a href="./dashboard/index.html">Dashboard</a>
+                <a href="./aula.html">Agendar aula</a>
+            </div>
+            <button onclick="limparSessao()" class="btn-logout">Fazer logout</button>
+        </div>
+    </header>
+    <div class="container">
+        <div class="conteudo">
+            <div class="titulo-container">
+                <h2>Selecione o quiz que deseja jogar:</h2>
+            </div>
+            <div class="card-conteudo-container">
+                <div class="card-conteudo" idQuiz="1">Teoria Musical</div>
+                <div class="card-conteudo" idQuiz="2">Violão</div>
+                <div class="card-conteudo" idQuiz="3">Clarinete</div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
+
+<script src="./js/jogos.js" type="module"></script>
+<script src="./js/sessao.js"></script>

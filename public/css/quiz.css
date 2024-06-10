@@ -102,3 +102,16 @@ button:hover {
     font-size: 22px;
     font-weight: 600;
 }
+
+.fa-xmark {
+    color: #371e11;
+    position: relative;
+    right: 645px;
+    bottom: 20px;
+    transition: color .3s ease-in-out;
+}
+
+.fa-xmark:hover {
+    color: #865422;
+    cursor: pointer;
+}
