@@ -6,10 +6,6 @@ function listar() {
     return database.executar(instrucaoSql)
 }
 
-function buscarPorEmail() {
-    
-}
-
 module.exports = {
     listar
 }
