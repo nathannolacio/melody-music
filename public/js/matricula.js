@@ -38,7 +38,7 @@ function matricular() {
                 "Cadastro realizado com sucesso!<br> Redirecionando para a nossa home..."
 
                 setTimeout(() => {
-                    window.location = './home.html'
+                    window.location = './aula.html'
                 }, '2000')
             })
             }
