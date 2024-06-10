@@ -1,10 +1,9 @@
 var database = require("../database/config");
 
-function listar() {
+function listar(idCurso) {
     var instrucaoSql = `
-    select professor.nome from professor 
-    join aula on idProfessor = fkProfessor 
-    where dataHora != '2024-06-03 12:00:00';
+    select idProfessor, nome from professor
+    where fkCurso = ${idCurso};
     `
 
     return database.executar(instrucaoSql)

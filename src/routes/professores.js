@@ -3,7 +3,7 @@ var router = express.Router();
 
 var professorController = require("../controllers/professorController")
 
-router.get("/listar", function (req, res) {
+router.get("/listar/:idCurso", function (req, res) {
     professorController.listar(req, res)
 })
 
