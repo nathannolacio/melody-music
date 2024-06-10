@@ -33,7 +33,8 @@
                     <span id="mensagem_sucesso">Aqui dentro vem a mensagem
                     </span>
                 </div>
-                <button onclick="fecharModal()" class="btn-modal">Ir agora</button>
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-3x"></i>
+                <!-- <button onclick="fecharModal()" class="btn-modal">Ir agora</button> -->
             </div>
         </dialog>
         <div class="lado-esquerdo">
@@ -51,17 +52,17 @@
             </div>
             <div class="input-container">
                 <label>Email</label>
-                <input type="text" id="ipt_email">
+                <input type="email" id="ipt_email">
             </div>
             <div class="input-container">
                 <label>Senha</label>
-                <input type="text" id="ipt_senha">
+                <input type="password" id="ipt_senha">
             </div>
             <div class="input-container">
                 <label>Confirmação de senha</label>
-                <input type="text" id="ipt_confirmacaoSenha">
+                <input type="password" id="ipt_confirmacaoSenha">
             </div>
-            <button class="botao" onclick="irParaCadastroParte2()">Próximo</button>
+            <button class="botao" onclick="cadastrarUsuario()">Próximo</button>
             <span>Já possui uma conta? <a href="login.html">Faça login</a></span>
         </div>
         <div class="lado-direito" id="cadastro_pt2">

@@ -15,7 +15,7 @@
 .fa-arrow-left {
     color: #faf8ec;
     position: absolute;
-    top: 70px;
+    top: 56px;
     left: 850px;
     transition: color 0.3s ease-in-out;   
 }
@@ -53,7 +53,7 @@
 }
 
 .lado-direito {
-    background-image: linear-gradient(to top left, #151618, #2c2d4d);
+    background-image: linear-gradient(to top left, #151618, #371e11);
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -128,4 +128,80 @@ a {
 
 a:hover {
     color: #c29130;
+}
+
+.modal-mensagem {
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(21, 22, 24, 0.850);
+}
+
+.mensagem_erro-container, .mensagem_sucesso-container {
+    background-color: #fff;
+    color: #151618;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 45vh;
+    width: 45%;
+    border-radius: 15px;
+}
+
+.mensagem {
+    text-align: center;
+}
+
+.fa-triangle-exclamation {
+    color: #d40808;
+}
+
+.btn-modal {
+    border: none;
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 15px;
+    font-size: 16px;
+    transition: all .3s ease-in-out;
+}
+
+.btn-modal:hover {
+    color: #faf8ec;
+    cursor: pointer;
+}
+
+.mensagem_erro-container .btn-modal{
+    background-color: #d40808;
+}
+
+.mensagem_erro-container .btn-modal:hover {
+    background-color: #8c1010;
+}
+
+.mensagem_sucesso-container .btn-modal {
+    background-color: #1cae02;
+}
+
+.mensagem_sucesso-container .btn-modal:hover {
+    background-color: #18680c;
+}
+
+.fa-circle-check {
+    color: #1cae02;
+}
+
+.fa-xmark {
+    color: #151618;
+    position: absolute;
+    top: 185px;
+    left: 950px;
+}
+
+.fa-xmark:hover {
+    cursor: pointer;
 }

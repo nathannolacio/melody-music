@@ -7,12 +7,32 @@
     <title>Login</title>
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/login.css">
-    <script src="./js/sessao.js"></script>
     <script src="https://kit.fontawesome.com/dbbdfc731d.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
     <div class="container">
+        <dialog class="modal-mensagem" id="modal_mensagem">
+            <i onclick="fecharModal()" class="fa-solid fa-xmark fa-2x"></i>
+            <div class="mensagem_erro-container" id="mensagem_erro_container">
+                <i class="fa-solid fa-triangle-exclamation fa-beat fa-5x"></i>
+                <div class="mensagem">
+                    <h1>Ops!</h1>
+                    <span id="mensagem_erro">Aqui dentro vem a mensagem de erro</span>
+                </div>
+                <button onclick="fecharModal()" class="btn-modal">Tentar novamente</button>
+            </div>
+            <div class="mensagem_sucesso-container" id="mensagem_sucesso_container">
+                <i class="fa-solid fa-circle-check fa-5x"></i>
+                <div class="mensagem">
+                    <h1>Sucesso!</h1>
+                    <span id="mensagem_sucesso">Aqui dentro vem a mensagem
+                    </span>
+                </div>
+                <i class="fa-solid fa-spinner fa-spin-pulse fa-3x"></i>
+                <!-- <button onclick="fecharModal()" class="btn-modal">Ir agora</button> -->
+            </div>
+        </dialog>
         <div class="lado-esquerdo">
             <div class="imagens">
                 <img class="musica" src="./assets/img/cadastroUsuario-musica.svg" alt="">
@@ -28,7 +48,7 @@
             </div>
             <div class="input-container">
                 <label>Senha</label>
-                <input type="text" id="ipt_senha">
+                <input type="password" id="ipt_senha">
             </div>
             <button class="botao" onclick="fazerLogin()">Entrar</button>
             <span>Não possui uma conta? <a href="cadastroUsuario.html">Cadastre-se</a></span>

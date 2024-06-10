@@ -19,7 +19,7 @@
 .fa-arrow-left {
     color: #faf8ec;
     position: absolute;
-    top: 35px;
+    top: 25px;
     left: 850px;
     transition: color 0.3s ease-in-out;   
 }
