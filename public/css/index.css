@@ -7,6 +7,5 @@ body {
 }
 
 .conteudo {
-    position: relative;
-    top: 80px;
+    padding-top: 100px;
 }

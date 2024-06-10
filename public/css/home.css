@@ -100,10 +100,6 @@ header {
     color: inherit;
 }
 
-/* .botoes button:hover {
-
-} */
-
 .container {
     height: 88vh;
     width: 100%;
@@ -132,7 +128,6 @@ header {
 
 .conteudo p {
     font-size: 20px;
-    /* text-align: center; */
 }
 
 span {
@@ -260,7 +255,7 @@ span {
 .fa-xmark {
     color: #371e11;
     position: absolute;
-    top: 80px;
+    top: 45px;
     right: 170px;
     transition: all .3s ease-in-out;
 }
@@ -268,4 +263,8 @@ span {
 .fa-xmark:hover {
     color: #D1A63D;
     cursor: pointer;
+}
+
+.nav-items .nav-home {
+    color: #D1A63D;
 }

@@ -20,6 +20,23 @@ header {
     padding: 10px 0;
 }
 
+.btn-logout {
+    padding: 5px 15px;
+    border-radius: 5px;
+    border: none;
+    background-color: #D1A63D;
+    color: #151618;
+    font-size: 18px;
+    font-weight: 600;
+    transition: all .3s ease-in-out;
+}
+
+.btn-logout:hover {
+    cursor: pointer;
+    background-color: rgba(209, 167, 61, 0.750);
+    color: rgba(21, 22, 24, 0.750);
+}
+
 .icon-container {
     padding: 10px 8px 10px 8px;
     border: 3px solid #fff;
@@ -31,4 +48,22 @@ header {
     cursor: pointer;
     color: #D1A63D;
     border-color: #D1A63D;
+}
+
+.nav-items {
+    /* background-color: yellowgreen; */
+    width: 45%;
+    display: flex;
+    justify-content: space-around;
+    font-size: 20px;
+}
+
+.nav-items a {
+    text-decoration: none;
+    color: #fff;
+    transition: all .3s ease-in-out;
+}
+
+.nav-items a:hover{
+    color: #class="nav-home";
 }

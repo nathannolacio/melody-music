@@ -2,6 +2,7 @@ const conteudoContainer = document.querySelector('.conteudo-container')
 const cardConteudo = document.querySelectorAll('.card-conteudo')
 const tituloConteudo = document.querySelector('.titulo-conteudo')
 const btnFecharModal = document.querySelector('.fa-xmark')
+const btnLogout = document.querySelector('.btn-logout')
 
 import { conteudos } from "../conteudos/conteudos.js"
 
